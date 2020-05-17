@@ -1,6 +1,6 @@
 FILE=$1
 
-if [[ $FILE != "cityscapes" && $FILE != "night2day" && $FILE != "edges2handbags" && $FILE != "edges2shoes" && $FILE != "facades" && $FILE != "maps" ]]; then
+if [[ $FILE != "cityscapes"  && $FILE != "mugs" && $FILE != "night2day" && $FILE != "edges2handbags" && $FILE != "edges2shoes" && $FILE != "facades" && $FILE != "maps" ]]; then
   echo "Available datasets are cityscapes, night2day, edges2handbags, edges2shoes, facades, maps"
   exit 1
 fi
@@ -14,8 +14,8 @@ fi
 echo "Specified [$FILE]"
 
 URL=https://runway-image-assets.s3.amazonaws.com/datasets/mugs.tar.gz
-TAR_FILE=./mugs.tar.gz
-TARGET_DIR=./datasets/mugs
+TAR_FILE=./datasets/$FILE.tar.gz	
+TARGET_DIR=./datasets/$FILE/
 wget -N $URL -O $TAR_FILE
 mkdir -p $TARGET_DIR
 tar -zxvf $TAR_FILE -C ./datasets/
