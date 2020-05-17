@@ -13,7 +13,7 @@ fi
 
 echo "Specified [$FILE]"
 
-URL=https://runway-image-assets.s3.amazonaws.com/datasets/mugs.tar.gz
+URL=https://***.s3.amazonaws.com/datasets/mugs.tar.gz
 TAR_FILE=./datasets/$FILE.tar.gz	
 TARGET_DIR=./datasets/$FILE/
 wget -N $URL -O $TAR_FILE
